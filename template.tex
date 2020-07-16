@@ -1,0 +1,234 @@
+%----------------------------------------------------------------------------------------
+%	WHITEBOX MACHINE LEARNING LATEX TEMPLATE
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage{parskip}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{longtable} 
+\usepackage{multirow}
+\usepackage{textcase}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+
+\geometry{a4paper}
+
+\linespread{1.2}
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COVER
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+	
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\center
+
+\textsc{\LARGE Client Name}\\[1.5cm]
+\textsc{\Large Project Name}\\[0.5cm]
+\textsc{\large Project Description}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Document Name}\\[0.0cm]
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+	\begin{flushleft} \large
+		\emph{Authors:}\\
+		David A. \textsc{Cañones}\\
+		Pedro \textsc{Muñoz}
+	\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+	\begin{flushright} \large
+		\emph{Supervisors:} \\
+		David A. \textsc{Cañones}\\
+		Pedro \textsc{Muñoz}
+	\end{flushright}
+\end{minipage}\\[4cm]
+
+{\large \today}\\[3cm]
+
+\includegraphics[width=10cm,height=10cm,keepaspectratio]{logo.png}\\[1cm]
+
+\vfill
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	TABLES AND PLOTS
+%----------------------------------------------------------------------------------------
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+\section{Section}
+
+\blindtext
+
+Bibliography citation \cite{einstein}.
+
+Formula $t + 5h$.
+
+
+\subsection{Sub-section}
+
+\blindtext[2]
+
+Table:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Placeholder}    & \textbf{A} 	 & \textbf{B} 	& \textbf{C}   & \textbf{D} 		\\ \hline
+		Placeholder          	& 33.54          & 36.18        & 52.33        & 29.42              \\ \hline
+		Placeholder             & 29.40          & 32.66        & 37.69        & 28.30              \\ \hline
+		$\Delta (p.p)$     		& -4.14          & -3.52        & -14.64       & -1.13              \\ \hline
+		$\Delta (\%)$      		& -12.35         & -9.73        & -27.98       & -3.83              \\ \hline
+	\end{tabular}
+\caption{Table caption}
+\end{table}
+
+Bullet list:
+
+\begin{itemize}
+	
+	\item Item 1.
+	
+	\item Item 2.
+	
+	\item Item 3.
+	
+	\item \href{https://whiteboxml.com}
+	{Link} (WhiteBox)
+	
+\end{itemize}
+
+Longtable (this table will split with pages...):
+
+\begin{longtable}[H]{|c|c|c|c|c|} 
+		\hline
+		\textbf{A} 			& \textbf{B} 			& \textbf{C} 	 & \textbf{D} 				& \textbf{E} 		  \\ \hline 
+		\endhead
+		Lorem        		& Ipsum            		& Dolor          & Sit               		& Amet                 \\ \hline
+		Consectetur         & Adipiscing            & Elit           & Proin                    & ${Kg \cdot m^{-2}}$  \\ \hline
+		Lorem        		& Ipsum            		& Dolor          & Sit               		& Amet                 \\ \hline
+		Consectetur         & Adipiscing            & Elit           & Proin                    & ${Kg \cdot m^{-2}}$  \\ \hline
+\caption{Example caption for longtable}
+\end{longtable}
+
+Nested numbered lists:
+
+\begin{enumerate}
+	
+	\item \textit{first\_item}: this is a standalone item.
+	
+	\item \textit{second\_item}: this element has a nested numbered list:
+	
+	\begin{enumerate}
+		
+		\item Nested bullet element 1.
+		\item Nested bullet element 2.
+
+	\end{enumerate}
+	
+\end{enumerate}
+
+Iimage:
+
+\begin{figure}[H]
+	\center{\includegraphics[width=0.7\linewidth]{logo.png}}
+	\caption{Example image caption}
+	\label{fig:example_label}
+\end{figure}
+
+Example figure citation: Figure ~\ref{fig:example_label}
+
+\subsubsection{Sub-sub-section}
+
+\blindtext 
+
+\begin{description}
+	
+\item[Sub-sub-sub-section (last level)] \hfill
+	
+	\blindtext
+	
+\item[Sub-sub-sub-section (last level)] \hfill
+	
+	\blindtext
+		
+\end{description}
+
+\newpage
+
+\appendix
+
+\section{Appendix}
+
+Example of bucle with images:
+
+\foreach \id in {First appendix subsection,Second appendix subsection}
+{
+	\subsection{\id}
+	
+	Text of the section \id.
+	
+	\begin{figure}[H]
+		\center{\includegraphics[width=0.3\linewidth]{logo_squared.png}}
+		\caption{Example of caption for section \id}
+		\label{fig:label_\id}
+	\end{figure}
+
+	Citation for figure of section \id: Figure ~\ref{fig:label_\id}
+
+}
+
+\newpage
+
+\begin{thebibliography}{9}
+	\bibitem{einstein} 
+	Albert Einstein. 
+	\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+	[\textit{On the electrodynamics of moving bodies}]. 
+	Annalen der Physik, 322(10):891–921, 1905.
+\end{thebibliography}
+
+\end{document}
